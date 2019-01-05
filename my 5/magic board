@@ -1,0 +1,125 @@
+#include <bits/stdc++.h>
+using namespace std;
+struct billy
+{
+int van[8];
+};
+ 
+ 
+int bef[20000000];
+char op[20000000], dkhm[10000];
+bool f[20000000];
+ 
+ 
+void bfs(int );
+int penis(int );
+inline int shit(billy );
+ 
+ 
+int main(void)
+{
+	int jerk = 0, suck = 1;
+	for (int i = 0; i < 8; ++i, suck *= 8)
+	{
+		int bitch;
+    cin >> bitch;
+		jerk += suck * bitch;
+	}
+	
+	bfs(jerk);
+	int dick = penis(jerk);
+	cout << dick << endl;
+	for (int i = dick; i; --i)
+	{
+		if (i != dick && !((dick - i) % 60))
+			putchar('\n');
+		putchar(dkhm[i]);
+	}
+	
+	return 0;
+}
+ 
+ 
+void bfs(int jerk)
+{
+	queue <billy> fuck;
+	billy tmp;
+	for (int i = 0; i < 4; ++i)
+		tmp.van[i] = i + 1;
+	for (int i = 4; i < 8; ++i)
+		tmp.van[i] = 12 - i;
+	fuck.push(tmp);
+	f[shit(tmp)] = 1;
+	for (; !fuck.empty(); fuck.pop())
+	{
+		billy wank = fuck.front();
+		int feces = shit(wank);
+		for (int i = 0; i < 4; ++i)
+		{
+			tmp.van[i] = wank.van[i + 4];
+			tmp.van[i + 4] = wank.van[i];
+		}
+		int t = shit(tmp);
+		if (!f[t])
+		{
+			f[t] = 1;
+			op[t] = 'A';
+			bef[t] = feces;
+			if (t == jerk)
+				return ;
+			fuck.push(tmp);
+		}
+		for (int i = 1; i < 4; ++i)
+		{
+			tmp.van[i] = wank.van[i - 1];
+			tmp.van[i + 4] = wank.van[i + 3];
+		}
+		tmp.van[0] = wank.van[3];
+		tmp.van[4] = wank.van[7];
+		t = shit(tmp);
+  	if (!f[t])
+		{
+			f[t] = 1;
+			op[t] = 'B';
+			bef[t] = feces;
+			if (t == jerk)
+				return ;
+			fuck.push(tmp);
+		}
+		tmp.van[0] = wank.van[0];
+		tmp.van[3] = wank.van[3];
+		tmp.van[4] = wank.van[4];
+		tmp.van[7] = wank.van[7];
+		tmp.van[1] = wank.van[5];
+		tmp.van[2] = wank.van[1];
+		tmp.van[6] = wank.van[2];
+		tmp.van[5] = wank.van[6];
+		t = shit(tmp);
+		if (!f[t])
+		{
+			f[t] = 1;
+			op[t] = 'C';
+			bef[t] = feces;
+			if (t == jerk)
+				return ;
+			fuck.push(tmp);
+		}
+	}
+} 
+int penis(int jerk)
+{
+	int tot = 0;
+	for (; bef[jerk]; jerk = bef[jerk])
+		dkhm[++tot] = op[jerk];
+	return tot;
+}
+inline int shit(billy a)
+{
+	int ass = 0, suck = 1;
+	for (int i = 0; i < 4; ++i, suck *= 8)
+		ass += suck * a.van[i];
+	(suck *= suck) /= 8;
+	for (int i = 4; i < 8; ++i, suck /= 8)
+		ass += suck * a.van[i];
+	return ass;
+}
